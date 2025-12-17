@@ -25,6 +25,13 @@ class RMS:
         btn_logout = Button(M_Frame, text = "Logout", font = ("goudy old style", 15, "bold"), bg = "#0b5377", fg = "white", cursor = "hand2").place(x=900, y=5, width = 200, height = 40)
         btn_exit = Button(M_Frame, text = "Exit", font = ("goudy old style", 15, "bold"), bg = "#0b5377", fg = "white", cursor = "hand2").place(x=1120, y=5, width = 200, height = 40)   
 
+        # Content Window
+        self.bg_img = Image.open("images/bg.png")
+        self.bg_img = self.bg_img.resize((920, 350), Image.ANTIALIAS)
+        self.bg_img = ImageTk.PhotoImage(self.bg_img)
+
+        self.lbl_bg = Label(self.root, image = self.bg_img).place(x=400, y=180, width=920, height=350)
+
         # Footer
         footer = Label(self.root, text = "SRMS -Student Result Management System\nContact Us for any Technical Issues: 987xxxx01 ", font = ("goudy old style", 12), bg = "#026262", fg = "white").pack(side = BOTTOM, fill = X)
 
