@@ -27,10 +27,13 @@ class RMS:
 
         # Content Window
         self.bg_img = Image.open("images/bg.png")
-        self.bg_img = self.bg_img.resize((920, 350), Image.ANTIALIAS)
+        self.bg_img = self.bg_img.resize((920, 350), Image.Resampling.LANCZOS)
         self.bg_img = ImageTk.PhotoImage(self.bg_img)
 
         self.lbl_bg = Label(self.root, image = self.bg_img).place(x=400, y=180, width=920, height=350)
+
+        # Update Details
+        self.lbl_course = Label(self.root, text = "Total Course\n[ 0 ]", font = ("goudy old style", 20),bd=10, relief=RIDGE, bg="#e43b06", fg="white").place(x=400, y=530, width=300, height=100)
 
         # Footer
         footer = Label(self.root, text = "SRMS -Student Result Management System\nContact Us for any Technical Issues: 987xxxx01 ", font = ("goudy old style", 12), bg = "#026262", fg = "white").pack(side = BOTTOM, fill = X)
