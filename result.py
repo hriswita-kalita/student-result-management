@@ -29,3 +29,16 @@ class ResultClass:
         Label(self.root, text="Course", font=("goudy old style", 15), bg="white").place(x=50, y=180)
         Label(self.root, text="Marks Obtained", font=("goudy old style", 15), bg="white").place(x=50, y=230)
         Label(self.root, text="Full Marks", font=("goudy old style", 15), bg="white").place(x=50, y=280)
+
+        # Entry Fields
+        self.cmb_student = ttk.Combobox(self.root, textvariable=self.var_student, state="readonly")
+        self.cmb_student.place(x=220, y=80, width=200)
+
+        Entry(self.root, textvariable=self.var_name, font=("goudy old style", 15),
+              bg="lightyellow").place(x=220, y=130, width=200)
+        Entry(self.root, textvariable=self.var_course, font=("goudy old style", 15),
+              bg="lightyellow").place(x=220, y=180, width=200)
+        Entry(self.root, textvariable=self.var_marks, font=("goudy old style", 15),
+              bg="lightyellow").place(x=220, y=230, width=200)
+        Entry(self.root, textvariable=self.var_full_marks, font=("goudy old style", 15),
+              bg="lightyellow").place(x=220, y=280, width=200)
