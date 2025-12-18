@@ -27,3 +27,20 @@ class studentClass:
         self.var_city = StringVar()
         self.var_pin = StringVar()
         self.var_search = StringVar()
+
+        # Labels
+        Label(self.root, text="Roll No.", font=("goudy old style", 15, "bold"), bg="white").place(x=10, y=60)
+        Label(self.root, text="Name", font=("goudy old style", 15, "bold"), bg="white").place(x=10, y=100)
+        Label(self.root, text="Email", font=("goudy old style", 15, "bold"), bg="white").place(x=10, y=140)
+        Label(self.root, text="Gender", font=("goudy old style", 15, "bold"), bg="white").place(x=10, y=180)
+        Label(self.root, text="Address", font=("goudy old style", 15, "bold"), bg="white").place(x=10, y=220)
+
+        Label(self.root, text="D.O.B", font=("goudy old style", 15, "bold"), bg="white").place(x=400, y=60)
+        Label(self.root, text="Contact No.", font=("goudy old style", 15, "bold"), bg="white").place(x=400, y=100)
+        Label(self.root, text="Select Course", font=("goudy old style", 15, "bold"), bg="white").place(x=400, y=140)
+        Label(self.root, text="Admission Date", font=("goudy old style", 15, "bold"), bg="white").place(x=400, y=180)
+
+        Label(self.root, text="State", font=("goudy old style", 15, "bold"), bg="white").place(x=10, y=350)
+        Label(self.root, text="City", font=("goudy old style", 15, "bold"), bg="white").place(x=240, y=350)
+        Label(self.root, text="Pin Code", font=("goudy old style", 15, "bold"), bg="white").place(x=470, y=350)
+
