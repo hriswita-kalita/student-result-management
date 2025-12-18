@@ -118,3 +118,20 @@ class studentClass:
         self.create_table()
         self.show()
 
+        # Database
+        def create_table(self):
+         con = sqlite3.connect("rms.db")
+         cur = con.cursor()
+         cur.execute("""
+            CREATE TABLE IF NOT EXISTS student(
+                roll TEXT PRIMARY KEY,
+                name TEXT,
+                email TEXT,
+                gender TEXT,
+                dob TEXT
+            )
+        """)
+         con.commit()
+         con.close()
+
+
