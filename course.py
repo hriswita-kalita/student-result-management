@@ -50,13 +50,23 @@ class CourseClass:
         # Content
         self.course_Frame = Frame(self.root, bd=2, relief=RIDGE)
         self.course_Frame.place(x=720, y=100, width=470, height=340)
-
-        self.CourseTable = ttk.Treeview(self.course_Frame, columns=("cid", "name", "duration", "charges", "description"))
+        
+        scrolly = Scrollbar(self.course_Frame, orient=VERTICAL)
+        scrollx = Scrollbar(self.course_Frame, orient=HORIZONTAL)
+        self.CourseTable = ttk.Treeview(self.course_Frame, columns=("cid", "name", "duration", "charges", "description"), xscrollcommand=scrollx.set, yscrollcommand=scrolly.set)
+        
+        scrollx.pack(side=BOTTOM, fill=X)
+        scrolly.pack(side=RIGHT, fill=Y)
+        scrollx.config(command=self.CourseTable.xview)
+        scrolly.config(command=self.CourseTable.yview)
+        
         self.CourseTable.heading("cid", text="Course ID")
         self.CourseTable.heading("name", text="Name")
         self.CourseTable.heading("duration", text="Duration")
         self.CourseTable.heading("charges", text="Charges")
+        
         self.CourseTable.heading("description", text="Description")
+        
         self.CourseTable["show"] = "headings"
         self.CourseTable.column("cid", width=50)
         self.CourseTable.column("name", width=100)
