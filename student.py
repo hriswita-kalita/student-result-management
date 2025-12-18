@@ -86,3 +86,35 @@ class studentClass:
         Entry(self.root, textvariable=self.var_search, font=("goudy old style", 15), bg="lightyellow").place(x=900, y=60, width=180)
         Button(self.root, text="Search", font=("goudy old style", 15, "bold"), bg="#03a9f4", fg="white",
                command=self.search).place(x=1090, y=60, width=100, height=28)
+        
+        # Table
+        self.student_Frame = Frame(self.root, bd=2, relief=RIDGE)
+        self.student_Frame.place(x=720, y=100, width=470, height=340)
+
+        scrollx = Scrollbar(self.student_Frame, orient=HORIZONTAL)
+        scrolly = Scrollbar(self.student_Frame, orient=VERTICAL)
+
+        self.StudentTable = ttk.Treeview(
+            self.student_Frame,
+            columns=("roll", "name", "email", "gender", "dob"),
+            xscrollcommand=scrollx.set,
+            yscrollcommand=scrolly.set
+        )
+
+        scrollx.pack(side=BOTTOM, fill=X)
+        scrolly.pack(side=RIGHT, fill=Y)
+        scrollx.config(command=self.StudentTable.xview)
+        scrolly.config(command=self.StudentTable.yview)
+
+        for col, txt in zip(("roll", "name", "email", "gender", "dob"),
+                            ("Roll No", "Name", "Email", "Gender", "DOB")):
+            self.StudentTable.heading(col, text=txt)
+            self.StudentTable.column(col, width=100)
+
+        self.StudentTable["show"] = "headings"
+        self.StudentTable.pack(fill=BOTH, expand=1)
+        self.StudentTable.bind("<ButtonRelease-1>", self.get_data)
+
+        self.create_table()
+        self.show()
+
