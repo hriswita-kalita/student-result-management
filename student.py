@@ -1,5 +1,5 @@
-from tkinter import 
-from tkinter import ttk, messagebox 
+from tkinterTk,  importTk,  
+from tkinter import Tk, ttk, messagebox 
 import sqlite3
 
 class studentClass:
@@ -133,5 +133,20 @@ class studentClass:
         """)
          con.commit()
          con.close()
+
+         # Crude Methods
+    def add(self): pass
+    def update(self): pass
+    def delete(self): pass
+    def clear(self): pass
+    def get_data(self, ev): pass
+    def show(self): pass
+    def search(self): pass
+
+
+if __name__ == "_main_":
+    root = Tk()
+    studentClass(root)
+    root.mainloop()
 
 
