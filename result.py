@@ -10,3 +10,9 @@ class ResultClass:
         self.root.geometry("1200x700+80+170")
         self.root.config(bg="white")
         self.root.focus_force()
+
+        # Title
+        Label(self.root, text="Add Student Result", font=("goudy old style", 20, "bold"),
+              bg="#ff9800").place(x=10, y=15, relwidth=1180, height=35)
+        
+        
