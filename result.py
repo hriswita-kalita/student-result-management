@@ -55,3 +55,15 @@ class ResultClass:
         self.bg_img = ImageTk.PhotoImage(self.bg_img)
 
         Label(self.root, image=self.bg_img, bg="white").place(x=600, y=90)
+
+        #=================================================================================================
+
+    def add(self):
+        pass
+
+    def clear(self):
+        self.var_student.set("")
+        self.var_name.set("")
+        self.var_course.set("")
+        self.var_marks.set("")
+        self.var_full_marks.set("")
