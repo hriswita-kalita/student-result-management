@@ -42,3 +42,12 @@ def search(self):
     row=cur.fetchone(); con.close()
     [self.data_labels[i].config(text=row[i]) for i in range(6)] if row else messagebox.showerror("Error","No record found",parent=self.root)
 
+# Clear
+def clear(self): self.var_search.set(""); [lbl.config(text="") for lbl in self.data_labels]
+
+def delete(self):
+    if self.var_search.get()=="": return messagebox.showerror("Error","Enter Roll No",parent=self.root)
+    con=sqlite3.connect("rms.db"); cur=con.cursor()
+    cur.execute("DELETE FROM result WHERE roll=?", (self.var_search.get(),))
+    con.commit(); con.close(); messagebox.showinfo("Success","Record deleted",parent=self.root); self.clear()
+
