@@ -42,3 +42,9 @@ class ResultClass:
               bg="lightyellow").place(x=220, y=230, width=200)
         Entry(self.root, textvariable=self.var_full_marks, font=("goudy old style", 15),
               bg="lightyellow").place(x=220, y=280, width=200)
+        
+        # Buttons
+        Button(self.root, text="Submit", font=("goudy old style", 15),
+               bg="#4caf50", command=self.add).place(x=220, y=340, width=100, height=35)
+        Button(self.root, text="Clear", font=("goudy old style", 15),
+               bg="#9e9e9e", command=self.clear).place(x=340, y=340, width=100, height=35)
