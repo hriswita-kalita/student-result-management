@@ -48,3 +48,10 @@ class ResultClass:
                bg="#4caf50", command=self.add).place(x=220, y=340, width=100, height=35)
         Button(self.root, text="Clear", font=("goudy old style", 15),
                bg="#9e9e9e", command=self.clear).place(x=340, y=340, width=100, height=35)
+        
+        # Image
+        self.bg_img = Image.open("images/result.png")
+        self.bg_img = self.bg_img.resize((450, 350), Image.Resampling.LANCZOS)
+        self.bg_img = ImageTk.PhotoImage(self.bg_img)
+
+        Label(self.root, image=self.bg_img, bg="white").place(x=600, y=90)
