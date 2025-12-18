@@ -17,7 +17,11 @@ class CourseClass:
         lbl_duration = Label(self.root, text="Duration", font=("goudy old style", 15, "bold"), bg="white").place(x=10, y=100)
         lbl_charges = Label(self.root, text="Charges", font=("goudy old style", 15, "bold"), bg="white").place(x=10, y=140)
         lbl_description = Label(self.root, text="Description", font=("goudy old style", 15, "bold"), bg="white").place(x=10, y=180)
-    
+
+        txt_courseName = Label(self.root, font=("goudy old style", 15, "bold"), bg="white").place(x=10, y=60)
+        txt_duration = Label(self.root, font=("goudy old style", 15, "bold"), bg="white").place(x=10, y=100)
+        txt_charges = Label(self.root, font=("goudy old style", 15, "bold"), bg="white").place(x=10, y=140)
+        txt_description = Label(self.root, font=("goudy old style", 15, "bold"), bg="white").place(x=10, y=180)
 
 if __name__ == "__main__":
     root = Tk()
