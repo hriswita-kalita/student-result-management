@@ -44,3 +44,26 @@ class studentClass:
         Label(self.root, text="City", font=("goudy old style", 15, "bold"), bg="white").place(x=240, y=350)
         Label(self.root, text="Pin Code", font=("goudy old style", 15, "bold"), bg="white").place(x=470, y=350)
 
+        # Entry Fields
+         Entry(self.root, textvariable=self.var_roll, font=("goudy old style", 15), bg="lightyellow").place(x=150, y=60, width=200)
+        Entry(self.root, textvariable=self.var_name, font=("goudy old style", 15), bg="lightyellow").place(x=150, y=100, width=200)
+        Entry(self.root, textvariable=self.var_email, font=("goudy old style", 15), bg="lightyellow").place(x=150, y=140, width=200)
+
+        self.cmb_gender = ttk.Combobox(self.root, textvariable=self.var_gender, values=("Select", "Male", "Female", "Other"), state="readonly")
+        self.cmb_gender.place(x=150, y=180, width=200)
+        self.cmb_gender.current(0)
+
+        self.txt_address = Text(self.root, font=("goudy old style", 15), bg="lightyellow")
+        self.txt_address.place(x=150, y=220, width=500, height=100)
+
+        Entry(self.root, textvariable=self.var_dob, font=("goudy old style", 15), bg="lightyellow").place(x=550, y=60, width=200)
+        Entry(self.root, textvariable=self.var_contact, font=("goudy old style", 15), bg="lightyellow").place(x=550, y=100, width=200)
+
+        self.cmb_course = ttk.Combobox(self.root, textvariable=self.var_course, state="readonly")
+        self.cmb_course.place(x=550, y=140, width=200)
+
+        Entry(self.root, textvariable=self.var_admission, font=("goudy old style", 15), bg="lightyellow").place(x=550, y=180, width=200)
+
+        Entry(self.root, textvariable=self.var_state, font=("goudy old style", 15), bg="lightyellow").place(x=80, y=350, width=140)
+        Entry(self.root, textvariable=self.var_city, font=("goudy old style", 15), bg="lightyellow").place(x=300, y=350, width=140)
+        Entry(self.root, textvariable=self.var_pin, font=("goudy old style", 15), bg="lightyellow").place(x=560, y=350, width=140)
