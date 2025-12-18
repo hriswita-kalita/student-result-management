@@ -29,7 +29,7 @@ class CourseClass:
         txt_duration = Entry(self.root, textvariable=self.var_duration, font=("goudy old style", 15, "bold"), bg="lightyellow").place(x=150, y=100, width=200)
         txt_charges = Entry(self.root, textvariable=self.var_charges, font=("goudy old style", 15, "bold"), bg="lightyellow").place(x=150, y=140, width=200)
         self.txt_description = Text(self.root, font=("goudy old style", 15, "bold"), bg="lightyellow")
-        self.txt_description.place(x=150, y=180, width=500, height=100)
+        self.txt_description.place(x=150, y=180, width=500, height=130)
 
         # Buttons
         self.btn_add = Button(self.root, text="Save", font=("goudy old style", 15, "bold"), bg="#2196f3", fg="white", cursor="hand2")
@@ -40,6 +40,13 @@ class CourseClass:
         self.btn_delete.place(x=390, y=400, width=110, height=40)
         self.btn_clear = Button(self.root, text="Clear", font=("goudy old style", 15, "bold"), bg="#607d8b", fg="white", cursor="hand2")
         self.btn_clear.place(x=510, y=400, width=110, height=40)
+
+        # Search Panel
+        self.var_search = StringVar()
+        lbl_search_courseName = Label(self.root, text="Course Name", font=("goudy old style", 15, "bold"), bg="white").place(x=720, y=60)
+        txt_search_courseName = Entry(self.root, textvariable=self.var_courseName, font=("goudy old style", 15, "bold"), bg="lightyellow").place(x=870, y=60, width=180)
+        btn_search = Button(self.root, text="Search", font=("goudy old style", 15, "bold"), bg="#03a9f4", fg="white", cursor="hand2").place(x=1070, y=60, width=120, height=28)
+
 if __name__ == "__main__":
     root = Tk()
     obj = CourseClass(root)
