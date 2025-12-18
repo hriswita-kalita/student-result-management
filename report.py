@@ -25,3 +25,6 @@ for h in headers:
     lbl=Label(self.root,text="",font=("goudy old style",15),bg="white",bd=2,relief=GROOVE); lbl.place(x=x,y=280,width=150,height=50)
     self.data_labels.append(lbl); x+=150
 
+# Delete
+Button(self.root,text="Delete",font=("goudy old style",15,"bold"),bg="red",fg="white",cursor="hand2",command=self.delete).place(x=520,y=380,width=160,height=40)
+
