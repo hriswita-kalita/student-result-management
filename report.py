@@ -9,3 +9,6 @@ class ReportClass:
 # Title
 Label(self.root,text="View Student Results",font=("goudy old style",30,"bold"),bg="#f7a400",fg="black").place(x=0,y=0,relwidth=1,height=70)
 
+# Variables
+self.var_search=StringVar()
+
