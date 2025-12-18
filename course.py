@@ -1,6 +1,7 @@
 from tkinter import *
 from PIL import Image , ImageTk # pip install pillow
-from tkinter import ttk
+from tkinter import ttk, messagebox
+import sqlite3
 class CourseClass:
     def __init__(self, root):
         self.root = root
@@ -32,7 +33,7 @@ class CourseClass:
         self.txt_description.place(x=150, y=180, width=500, height=130)
 
         # Buttons
-        self.btn_add = Button(self.root, text="Save", font=("goudy old style", 15, "bold"), bg="#2196f3", fg="white", cursor="hand2")
+        self.btn_add = Button(self.root, text="Save", font=("goudy old style", 15, "bold"), bg="#2196f3", fg="white", cursor="hand2", command=self.add)
         self.btn_add.place(x=150, y=400, width=110, height=40)
         self.btn_update = Button(self.root, text="Update", font=("goudy old style", 15, "bold"), bg="#4caf50", fg="white", cursor="hand2")
         self.btn_update.place(x=270, y=400, width=110, height=40)
@@ -59,7 +60,7 @@ class CourseClass:
         scrolly.pack(side=RIGHT, fill=Y)
         scrollx.config(command=self.CourseTable.xview)
         scrolly.config(command=self.CourseTable.yview)
-        
+
         self.CourseTable.heading("cid", text="Course ID")
         self.CourseTable.heading("name", text="Name")
         self.CourseTable.heading("duration", text="Duration")
@@ -74,6 +75,33 @@ class CourseClass:
         self.CourseTable.column("charges", width=100)
         self.CourseTable.column("description", width=150)
         self.CourseTable.pack(fill=BOTH, expand=1)
+
+        #====================================================================================================================================
+
+    def add(self):
+        con = sqlite3.connect(database="rms.db")
+        cur = con.cursor()
+        try:
+                if self.var_courseName.get() == "":
+                    messagebox.showerror("Error", "Course Name should be required", parent=self.root)
+                else:
+                    cur.execute("select * from course where name=?", (self.var_courseName.get(),))
+                    row = cur.fetchone()
+                    if row != None:
+                        messagebox.showerror("Error", "Course Name already present", parent=self.root)
+                    else:
+                        cur.execute("insert into course (name, duration, charges, description) values(?, ?, ?, ?)", (
+                            self.var_courseName.get(),
+                            self.var_duration.get(),
+                            self.var_charges.get(),
+                            self.txt_description.get("1.0", END)
+                        ))
+                    
+                    con.commit()
+                    messagebox.showinfo("Success", "Course added successfully", parent=self.root)
+        except Exception as ex:
+                messagebox.showerror("Error", f"Error due to : {str(ex)}")
+            
         
 if __name__ == "__main__":
     root = Tk()
