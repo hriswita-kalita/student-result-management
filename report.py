@@ -12,3 +12,9 @@ Label(self.root,text="View Student Results",font=("goudy old style",30,"bold"),b
 # Variables
 self.var_search=StringVar()
 
+# Search
+Label(self.root,text="Search By | Roll No.",font=("goudy old style",20,"bold"),bg="white").place(x=300,y=100)
+Entry(self.root,textvariable=self.var_search,font=("goudy old style",20),bg="lightyellow").place(x=540,y=100,width=160)
+Button(self.root,text="Search",font=("goudy old style",15,"bold"),bg="#03a9f4",fg="white",cursor="hand2",command=self.search).place(x=720,y=100,width=100,height=35)
+Button(self.root,text="Clear",font=("goudy old style",15,"bold"),bg="gray",fg="white",cursor="hand2",command=self.clear).place(x=840,y=100,width=100,height=35)
+
