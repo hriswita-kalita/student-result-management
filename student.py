@@ -45,7 +45,7 @@ class studentClass:
         Label(self.root, text="Pin Code", font=("goudy old style", 15, "bold"), bg="white").place(x=470, y=350)
 
         # Entry Fields
-         Entry(self.root, textvariable=self.var_roll, font=("goudy old style", 15), bg="lightyellow").place(x=150, y=60, width=200)
+        Entry(self.root, textvariable=self.var_roll, font=("goudy old style", 15), bg="lightyellow").place(x=150, y=60, width=200)
         Entry(self.root, textvariable=self.var_name, font=("goudy old style", 15), bg="lightyellow").place(x=150, y=100, width=200)
         Entry(self.root, textvariable=self.var_email, font=("goudy old style", 15), bg="lightyellow").place(x=150, y=140, width=200)
 
@@ -67,3 +67,22 @@ class studentClass:
         Entry(self.root, textvariable=self.var_state, font=("goudy old style", 15), bg="lightyellow").place(x=80, y=350, width=140)
         Entry(self.root, textvariable=self.var_city, font=("goudy old style", 15), bg="lightyellow").place(x=300, y=350, width=140)
         Entry(self.root, textvariable=self.var_pin, font=("goudy old style", 15), bg="lightyellow").place(x=560, y=350, width=140)
+
+        # Buttons
+        Button(self.root, text="Save", font=("goudy old style", 15, "bold"), bg="#2196f3", fg="white",
+               command=self.add).place(x=150, y=400, width=110, height=40)
+
+        Button(self.root, text="Update", font=("goudy old style", 15, "bold"), bg="#4caf50", fg="white",
+               command=self.update).place(x=270, y=400, width=110, height=40)
+
+        Button(self.root, text="Delete", font=("goudy old style", 15, "bold"), bg="#f44336", fg="white",
+               command=self.delete).place(x=390, y=400, width=110, height=40)
+
+        Button(self.root, text="Clear", font=("goudy old style", 15, "bold"), bg="#607d8b", fg="white",
+               command=self.clear).place(x=510, y=400, width=110, height=40)
+        
+        # Search 
+        Label(self.root, text="Search Roll No.", font=("goudy old style", 15, "bold"), bg="white").place(x=720, y=60)
+        Entry(self.root, textvariable=self.var_search, font=("goudy old style", 15), bg="lightyellow").place(x=900, y=60, width=180)
+        Button(self.root, text="Search", font=("goudy old style", 15, "bold"), bg="#03a9f4", fg="white",
+               command=self.search).place(x=1090, y=60, width=100, height=28)
