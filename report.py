@@ -35,3 +35,10 @@ def create_table(self):
         roll TEXT,name TEXT,course TEXT,marks INTEGER,total INTEGER,percentage REAL)""")
     con.commit(); con.close()
 
+# Search Logic
+def search(self):
+    con=sqlite3.connect("rms.db"); cur=con.cursor()
+    cur.execute("SELECT * FROM result WHERE roll=?", (self.var_search.get(),))
+    row=cur.fetchone(); con.close()
+    [self.data_labels[i].config(text=row[i]) for i in range(6)] if row else messagebox.showerror("Error","No record found",parent=self.root)
+
