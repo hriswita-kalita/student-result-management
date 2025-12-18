@@ -22,3 +22,10 @@ class ResultClass:
         self.var_course = StringVar()
         self.var_marks = StringVar()
         self.var_full_marks = StringVar()
+
+        # Labels
+        Label(self.root, text="Select Student", font=("goudy old style", 15), bg="white").place(x=50, y=80)
+        Label(self.root, text="Name", font=("goudy old style", 15), bg="white").place(x=50, y=130)
+        Label(self.root, text="Course", font=("goudy old style", 15), bg="white").place(x=50, y=180)
+        Label(self.root, text="Marks Obtained", font=("goudy old style", 15), bg="white").place(x=50, y=230)
+        Label(self.root, text="Full Marks", font=("goudy old style", 15), bg="white").place(x=50, y=280)
