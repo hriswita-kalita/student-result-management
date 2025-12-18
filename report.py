@@ -28,3 +28,10 @@ for h in headers:
 # Delete
 Button(self.root,text="Delete",font=("goudy old style",15,"bold"),bg="red",fg="white",cursor="hand2",command=self.delete).place(x=520,y=380,width=160,height=40)
 
+# Database
+def create_table(self):
+    con=sqlite3.connect("rms.db"); cur=con.cursor()
+    cur.execute("""CREATE TABLE IF NOT EXISTS result(
+        roll TEXT,name TEXT,course TEXT,marks INTEGER,total INTEGER,percentage REAL)""")
+    con.commit(); con.close()
+
