@@ -1,6 +1,6 @@
 from tkinter import *
 from PIL import Image , ImageTk # pip install pillow
-
+from tkinter import ttk
 class CourseClass:
     def __init__(self, root):
         self.root = root
@@ -46,7 +46,25 @@ class CourseClass:
         lbl_search_courseName = Label(self.root, text="Course Name", font=("goudy old style", 15, "bold"), bg="white").place(x=720, y=60)
         txt_search_courseName = Entry(self.root, textvariable=self.var_courseName, font=("goudy old style", 15, "bold"), bg="lightyellow").place(x=870, y=60, width=180)
         btn_search = Button(self.root, text="Search", font=("goudy old style", 15, "bold"), bg="#03a9f4", fg="white", cursor="hand2").place(x=1070, y=60, width=120, height=28)
+        
+        # Content
+        self.course_Frame = Frame(self.root, bd=2, relief=RIDGE)
+        self.course_Frame.place(x=720, y=100, width=470, height=340)
 
+        self.CourseTable = ttk.Treeview(self.course_Frame, columns=("cid", "name", "duration", "charges", "description"))
+        self.CourseTable.heading("cid", text="Course ID")
+        self.CourseTable.heading("name", text="Name")
+        self.CourseTable.heading("duration", text="Duration")
+        self.CourseTable.heading("charges", text="Charges")
+        self.CourseTable.heading("description", text="Description")
+        self.CourseTable["show"] = "headings"
+        self.CourseTable.column("cid", width=50)
+        self.CourseTable.column("name", width=100)
+        self.CourseTable.column("duration", width=100)
+        self.CourseTable.column("charges", width=100)
+        self.CourseTable.column("description", width=150)
+        self.CourseTable.pack(fill=BOTH, expand=1)
+        
 if __name__ == "__main__":
     root = Tk()
     obj = CourseClass(root)
